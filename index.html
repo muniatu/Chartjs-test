@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <title>Trovit Test JSON</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="data.json"></script>
     <script>
         $(function () {
             var url = 'data.json';
@@ -33,17 +33,21 @@
                 table.append(tableHead);
                 tableHead.append(tr);
                 var jsonObject = json[0];
-                console.log(jsonObject.year);
+                console.log(json[0]);
                 for (var i = 0; i < Object.keys(jsonObject).length; i++) {
                     var tr = $('<tr>');
                     var td = $('<td>');
                     var index = Object.keys(jsonObject)[i];
-                    var year = jsonObject[i];
-                    console.log(year);
                     td.html(index);
                     tr.append(td);
                     td = $('<td>');
-                    td.html(year);
+                    td.html(jsonObject[i+1].year);
+                    tr.append(td);
+                    td = $('<td>');
+                    td.html(jsonObject[i+1].month);
+                    tr.append(td);
+                    td = $('<td>');
+                    td.html(jsonObject[i+1].price_m2);
                     tr.append(td);
                     td = $('<td>');
                     table.append(tr);
