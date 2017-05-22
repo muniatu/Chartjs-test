@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <title>Trovit</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script>
+		$(function(){
+            var url='data.json';
+                $.getJSON(url, function(json){
+                    var table = $('<table>');
+                    var tableHead = $('<thead>');
+                    var tr = $('<tr>');
+                    var th = $('<th>');
+                    th.html("#");
+                    tr.append(th);
+                    th = $('<th>');
+                    th.html('Month');
+                    tr.append(th);
+                    th = $('<th>');
+                    th.html('Year');
+                    tr.append(th);
+                    th = $('<th>');
+                    th.html('price / m2');
+                    tr.append(th);
+                    th = $('<th>');
+                    tr.append(td);
+                    table.append(tableHead);
+                    tableHead.append(tr);
+                    var jsonObject = json[0];
+                    console.log(jsonObject.year);
+                    for( var i=0; i<Object.keys(jsonObject).length;i++){
+                        var tr = $('<tr>');
+                        var td = $('<td>');
+                        var index = Object.keys(jsonObject)[i];
+                        var year = jsonObject[i];
+                        console.log(year);
+                        td.html(index);
+                        tr.append(td);
+                        td = $('<td>');
+                        td.html(year);
+                        tr.append(td);
+                        td = $('<td>');
+                        table.append(tr);
+                    }
+                    $('#table').append(table);
+                });
+});
+
+	</script>
+  </head>
+  <body>
+      <nav id="navigation">
+          <div id="logo">
+            <svg version="1.1" id="svgLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 600" enable-background="new 0 0 1000 600" xml:space="preserve">
+<g>
+	<g>
+		<path fill="#FFFFFF" d="M397.2,228.8c-65.3,0-118.1,55.3-118.1,123.4s52.8,123.4,118.1,123.4s118.1-55.3,118.1-123.4
+			S462.5,228.8,397.2,228.8 M397.2,405c-27.8,0-50.6-23.8-50.6-52.8c0-29.1,22.8-52.8,50.6-52.8s50.6,23.7,50.6,52.8
+			C447.8,381.3,425,405,397.2,405"/>
+		<rect x="769.7" y="233.4" fill="#FFFFFF" width="65.9" height="237.2"/>
+		<path fill="#FFFFFF" d="M765.9,161.3c0-20.3,16.6-36.6,36.6-36.6c20.3,0,36.6,16.6,36.6,36.6c0,20.3-16.6,36.6-36.6,36.6
+			S765.9,181.6,765.9,161.3"/>
+		<path fill="#FFFFFF" d="M939.4,289.4h45v-55.9h-45v-68.1l-65.9,15.9v202.8c0,37.5,5.3,90.6,85.9,90.6c11.9,0,23.1-1.3,25-1.6
+			v-52.2h-17.5c-14.4,0-27.5-7.8-27.5-30.3V289.4z"/>
+		<path fill="#FFFFFF" d="M81.6,289.4h45v-55.9h-45v-68.1l-65.9,15.6v202.8c0,37.5,5.3,90.6,85.9,90.6c11.9,0,23.1-1.3,25-1.6v-51.9
+			h-17.5c-14.7,0-27.5-7.8-27.5-30.3C81.6,390.6,81.6,289.4,81.6,289.4z"/>
+		<path fill="#FFFFFF" d="M628.4,385.9l47.2-152.5h73.1l-79.1,213.4c-6.6,16.3-22.5,28.8-41.6,28.8l0,0c-19.1,0-34.7-12.5-41.6-28.8
+			l-78.8-213.1h73.4L628.4,385.9"/>
+		<path fill="#FFFFFF" d="M258.4,228.8L258.4,228.8c-55.6,0-100.9,45.3-100.9,100.9v140.9h65.9V339.4c0-29.4,18.1-45.3,45.3-45.3
+			h5.9v-65.3H258.4z"/>
+	</g>
+</g>
+</svg>
+          </div>
+          <ul class="menu">
+              <li class="active">Home</li>
+              <li>Section</li>
+          </ul>
+      </nav>
+      <section id="chart" class="half-page"></section>
+      <section id="table" class="half-page">
+      </section>
+    <div></div>
+  </body>
+</html>
