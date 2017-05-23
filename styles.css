@@ -1,88 +1,95 @@
 * {
-  margin: 0;
-  padding: 0;
-  min-height:100%;
-  font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
-}
-
-#navigation{
-    width:100%;
-    background-color:#222222;
-    height:3.6rem;
-    padding: 0 4rem;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
+#navigation {
+    width: 100%;
+    background-color: #222222;
+    height: 3.6rem;
+    padding: 0 4rem;
+}
+
 .menu {
-    position:relative;
+    position: relative;
     list-style: none;
-    float:left;
+    float: left;
     margin-left: 2rem;
-    height:100%;
 }
 
 .menu li {
     color: white;
     font-size: 1rem;
-    display:inline-block;
-    line-height:3.6rem;
+    display: inline-block;
+    line-height: 3.6rem;
     padding: 0 1rem;
 }
 
-.menu li.active{
-    background-color:black;
-}
-#logo {
-    height:100%;
-    float:left;
+.menu li.active {
+    background-color: black;
 }
 
-#logo svg{
+#logo {
+    height: 100%;
+    float: left;
+}
+
+#logo svg {
     width: 80px;
 }
+
 .half-page {
-    position:relative;
-    float:left;
-    height:100vh;
+    position: relative;
+    float: left;
+    height: 80vh;
     width: 50%;
 }
 
 #table {
     padding: 2rem 4rem 2rem 1rem;
-    box-sizing: border-box;
 }
 
 #chart {
     padding: 2rem 1rem 2rem 4rem;
-    box-sizing: border-box;
 }
 
 table {
-  min-width: 100%;
-  border-collapse: collapse;
+    min-width: 100%;
+    border-collapse: collapse;
 }
+
+table tr {
+    height: 1.2rem;
+}
+
 table td {
-  text-align: left;
-  padding: 12px;
-  border-bottom: 1px solid #E7E9ED;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #E7E9ED;
 }
+
 table th {
-  text-align: left;
-  padding: 12px;
-  border-bottom: 3px solid #E7E9ED;
-  background-color: white;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 3px solid #E7E9ED;
+    background-color: white;
 }
+
 table td:last-child,
 table th:last-child {
-  border-right: 0;
+    border-right: 0;
 }
+
 table tr :first-child {
     font-weight: bold;
 }
+
 table tr:nth-child(2n) td {
-  background-color: rgba(231, 233, 237, 0.2);
+    background-color: rgba(231, 233, 237, 0.2);
 }
+
 table tr:last-child td {
-  border-bottom: 0;
+    border-bottom: 0;
 }

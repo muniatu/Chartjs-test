@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script>
         $(function () {
             var url = 'data.json';
@@ -41,13 +42,13 @@
                     td.html(index);
                     tr.append(td);
                     td = $('<td>');
-                    td.html(jsonObject[i+1].year);
+                    td.html(jsonObject[i + 1].year);
                     tr.append(td);
                     td = $('<td>');
-                    td.html(jsonObject[i+1].month);
+                    td.html(jsonObject[i + 1].month);
                     tr.append(td);
                     td = $('<td>');
-                    td.html(jsonObject[i+1].price_m2);
+                    td.html(jsonObject[i + 1].price_m2);
                     tr.append(td);
                     td = $('<td>');
                     table.append(tr);
@@ -88,10 +89,41 @@
             <li>Section</li>
         </ul>
     </nav>
-    <section id="chart" class="half-page"></section>
-    <section id="table" class="half-page">
+    <section id="chart" class="half-page">
+        <canvas id="myChart" width="400" height="400"></canvas>
     </section>
-    <div></div>
+    <section id="table" class="half-page"></section>
+    <script>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [{
+                    label: "My First dataset",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    spanGaps: false,
+                }]
+            }
+        });
+    </script>
 </body>
 
 </html>
