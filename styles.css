@@ -3,6 +3,7 @@
   padding: 0;
   min-height:100%;
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
 #navigation{
@@ -10,6 +11,7 @@
     background-color:#222222;
     height:3.6rem;
     padding: 0 4rem;
+    box-sizing: border-box;
 }
 
 .menu {
@@ -45,28 +47,42 @@
     height:100vh;
     width: 50%;
 }
+
+#table {
+    padding: 2rem 4rem 2rem 1rem;
+    box-sizing: border-box;
+}
+
+#chart {
+    padding: 2rem 1rem 2rem 4rem;
+    box-sizing: border-box;
+}
+
 table {
   min-width: 100%;
   border-collapse: collapse;
 }
-table td,
-table th {
+table td {
   text-align: left;
   padding: 12px;
   border-bottom: 1px solid #E7E9ED;
-  border-right: 1px solid rgba(231, 233, 237, 0.5);
+}
+table th {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 3px solid #E7E9ED;
+  background-color: white;
 }
 table td:last-child,
 table th:last-child {
   border-right: 0;
 }
-table th {
-  background-color: rgba(231, 233, 237, 0.4);
+table tr :first-child {
+    font-weight: bold;
 }
 table tr:nth-child(2n) td {
   background-color: rgba(231, 233, 237, 0.2);
 }
-table tr:last-child td,
-table tr:last-child th {
+table tr:last-child td {
   border-bottom: 0;
 }
